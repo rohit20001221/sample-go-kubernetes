@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-kubernetes-go-deployment
+  labels:
+    app: sample-kubernetes-go
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-kubernetes-go
+  template:
+    metadata:
+      labels:
+        app: sample-kubernetes-go
+    spec:
+      containers:
+      - name: sample-kubernetes-go
+        image: rohit20001221/sample-kubernetes-go:latest
+        ports:
+        - containerPort: 8080
