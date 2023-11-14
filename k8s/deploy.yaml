@@ -5,7 +5,7 @@ metadata:
   labels:
     app: sample-kubernetes-go
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: sample-kubernetes-go
@@ -16,6 +16,13 @@ spec:
     spec:
       containers:
       - name: sample-kubernetes-go
-        image: rohit20001221/sample-kubernetes-go:latest
+        image: rohit20001221/sample-kubernetes-go
+        resources:
+          limits:
+            memory: 250Mi
+            cpu: "1"
+          requests:
+            memory: 128Mi
+            cpu: "0.2"
         ports:
         - containerPort: 8080
