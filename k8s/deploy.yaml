@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-kubernetes-go-deployment
+  name: sample-kubernetes-go
   labels:
     app: sample-kubernetes-go
 spec:
